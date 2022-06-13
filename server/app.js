@@ -66,7 +66,12 @@ app.get('/video/:id', (req, res) => {
         res.writeHead(200, head);
         fs.createReadStream(path).pipe(res)
     }
-})
+});
+
+app.get('/video/:id/poster', (req, res) => {
+    thumbsupply.generateThumbnail(`assets/${req.params.id}.mp4`)
+        .then(thumb => res.sendFile(thumb));
+});
 
 app.listen(4000, () => {
     console.log('Listening on port 4000!')
