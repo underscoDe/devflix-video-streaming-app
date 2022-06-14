@@ -119,8 +119,15 @@ nav .nav-link {
   place-items: center;
 }
 
-.header-bg .text {
-  max-width: 60%;
+@media screen and (min-width: 768px) {
+  .header-bg .text {
+    max-width: 60%;
+  }
+
+  .header-bg .text p {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }
 
 .header-bg h1 {
@@ -129,8 +136,6 @@ nav .nav-link {
 
 .header-bg .text p {
   font-size: 1.5rem;
-  padding-left: 80px;
-  padding-right: 80px;
 }
 
 .card-container {
@@ -152,4 +157,9 @@ nav .nav-link {
   backdrop-filter: saturate(200%) blur(30px);
   box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
   max-width: 95%;
+}
+
+.App-header {
+  padding: 3rem 0;
+  min-height: unset!important;
 }

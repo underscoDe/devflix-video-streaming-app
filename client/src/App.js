@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Login from './components/LoginPage';
 import Register from './components/RegisterPage';
 import Home from './components/HomePage';
+import TempPlayer from './components/TempPlayer';
 import firebase  from './services/firebase';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,12 +27,15 @@ function App() {
     })
   }, [])
 
+  console.log(user)
+
   return (
     <div className="app">
       <Routes>
         <Route path="/" element={ user ? <Home user={user} /> : <Login /> } />
         <Route path="login" element={ user ? <Home user={user} /> : <Login /> } />
         <Route path="register" element={ user ? <Home user={user} /> : <Register /> } />
+        <Route path="/player/:id" element={ user ? <TempPlayer  /> : <Login />}></Route>
       </Routes>
     </div>
   );
