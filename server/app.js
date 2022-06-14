@@ -70,7 +70,8 @@ app.get('/video/:id', (req, res) => {
 
 app.get('/video/:id/poster', (req, res) => {
     thumbsupply.generateThumbnail(`assets/${req.params.id}.mp4`)
-        .then(thumb => res.sendFile(thumb));
+        .then(thumb => res.sendFile(thumb))
+        .catch(err => console.log(err));
 });
 
 app.get('/video/:id/caption', (req, res) => res.sendFile('assets/captions/sample.vtt', { root: __dirname }));
