@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const thumbsupply = require('thumbsupply');
+const path = require('path');
 const cors  = require('cors');
 const app = express();
 
@@ -26,6 +27,7 @@ const videos = [
 ];
 
 app.use(cors());
+app.use(express.static(path.join(__dirname + "/public")))
 
 // endpoint to fetch all videos metadata
 app.get('/videos', function(req, res) {
