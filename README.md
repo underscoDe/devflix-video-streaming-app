@@ -25,6 +25,6 @@ DevFlix is a video streaming app built in ReactJS and NodeJS & Express as a part
 
 ## How to contribute
 
-## Contributors
+## Authors
 
 ## Acknowledgments
